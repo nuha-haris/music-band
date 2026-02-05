@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Typing Speed Test</h1>
+        <div class="controls">
+            <label for="timeSelect">⏱ Select Time:</label>
+            <select id="timeSelect">
+                <option value="30">30 sec</option>
+                <option value="60">1 min</option>
+                <option value="120">2 min</option>
+                <option value="300">5 min</option>
+            </select>
+            <button id="resetBtn">🔁 Reset</button>
+        </div>
+
+        <div class="test-area">
+            <p id="sentence">Loading sentence...</p>
+            <textarea id="typingInput" placeholder="Start typing here..."></textarea>
+        </div>
+
+        <div class="side-section">
+            <div class="stats">
+                <h3>📊 Stats</h3>
+                <p><strong>Time Left:</strong> <span id="timeLeft">0s</span></p>
+                <p><strong>WPM:</strong> <span id="wpm">0</span></p>
+                <p><strong>Accuracy:</strong> <span id="accuracy">0%</span></p>
+            </div>
+
+            <div class="tips">
+                <h3>💡 Tips</h3>
+                <ul>
+                    <li>Focus on accuracy before speed.</li>
+                    <li>Look at the screen, not the keyboard.</li>
+                    <li>Use all your fingers evenly.</li>
+                    <li>Practice daily to improve consistency.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup" class="popup hidden">
+        <h2>⏰ Time’s Up!</h2>
+        <p>Your typing session has ended.</p>
+        <button id="closePopup">OK</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
